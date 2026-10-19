@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Word, the Anointing &amp; the Application</title>
+<meta name="description" content="An interactive teaching record: KJV Scriptures, main teaching points, declarations and how to keep the anointing after the service.">
+<meta name="theme-color" content="#0f1f4b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="iconbtn" id="homeBtn" aria-label="Home">⌂ Home</button>
+  <div class="tools">
+    <button class="iconbtn" id="fontDown" aria-label="Smaller text">A−</button>
+    <button class="iconbtn" id="fontUp" aria-label="Larger text">A+</button>
+    <button class="iconbtn" id="themeBtn" aria-label="Switch day or night mode">Night</button>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<section class="player" id="player" aria-label="Audio player" hidden>
+  <div class="player-now" id="nowPlaying">Ready</div>
+  <div class="player-row">
+    <button class="pbtn" id="pPrevSec" aria-label="Previous section">⏮<span>Section</span></button>
+    <button class="pbtn" id="pBack" aria-label="Back one sentence">⟲<span>Back</span></button>
+    <button class="pbtn main" id="pPlay" aria-label="Play">▶<span>Play</span></button>
+    <button class="pbtn" id="pStop" aria-label="Stop">■<span>Stop</span></button>
+    <button class="pbtn" id="pFwd" aria-label="Forward one sentence">⟳<span>Forward</span></button>
+    <button class="pbtn" id="pNextSec" aria-label="Next section">⏭<span>Section</span></button>
+  </div>
+  <details class="player-more">
+    <summary>Audio settings</summary>
+    <div class="settings">
+      <label>Speed
+        <select id="pSpeed">
+          <option value="0.75">0.75×</option><option value="0.9">0.9×</option>
+          <option value="1" selected>1×</option><option value="1.25">1.25×</option>
+          <option value="1.5">1.5×</option><option value="2">2×</option>
+        </select>
+      </label>
+      <label>Volume <input type="range" id="pVol" min="0" max="1" step="0.1" value="1"></label>
+      <label class="check"><input type="checkbox" id="pRepeat"> Repeat this section</label>
+      <label class="check"><input type="checkbox" id="pRam" checked> Repeat-after-me pauses</label>
+      <label>Sleep timer
+        <select id="pSleep">
+          <option value="0">Off</option><option value="15">15 minutes</option>
+          <option value="30">30 minutes</option><option value="60">60 minutes</option>
+        </select>
+      </label>
+    </div>
+  </details>
+</section>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
